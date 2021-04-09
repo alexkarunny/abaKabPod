@@ -6,22 +6,15 @@ type AccordionPropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
-    debugger
-    if (props.collapsed === false) {
-        return (
-            <div>
-                <AccordionTitle text={props.title}/>
-                <AccordionBody/>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <AccordionTitle text={props.title}/>
-            </div>
-        )
-    }
+
+    return (
+        <div>
+            <AccordionTitle text={props.title}/>
+            {!props.collapsed && <AccordionBody/>}
+        </div>
+    )
 }
+
 
 type AccordionTitlePropsType = {
     text: string
@@ -40,9 +33,9 @@ function AccordionBody() {
     console.log('AccordionBody rendering');
     return (
         <ul>
-            <AccordionList text={'rt'}/>
-            <AccordionList text={'dfkj'}/>
-            <AccordionList text={'asdf'}/>
+            <AccordionList text={'Hellp'}/>
+            <AccordionList text={'Salut'}/>
+            <AccordionList text={'A bien to'}/>
         </ul>
     );
 }

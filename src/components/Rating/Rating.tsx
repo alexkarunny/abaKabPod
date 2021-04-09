@@ -64,15 +64,15 @@ export function Rating(props: RatingPropsType) {
         );
     }
 
-        return (
-            <div>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        );
+    return (
+        <div>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+        </div>
+    );
 }
 
 type StarPropsType = {
