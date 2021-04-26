@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
-import {PageTitle} from "./components/PageTitle/PageTitle";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/Switch/Switch";
 import {IndependentAccordion} from "./components/IndependentAccordion/IndependentAccordion";
 import {IndependentRating} from "./components/IndependentRating/IndependentRating";
+import Accordion from "./components/Accordion/Accordion";
 
 function App() {
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+
     return (
         <div className={"app"}>
 
@@ -17,7 +20,9 @@ function App() {
 
             <IndependentAccordion title={'hi'} />
 
-            <Rating value={3} />
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+
+            <Accordion title={"hie"} collapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed}/>
 
 
 
