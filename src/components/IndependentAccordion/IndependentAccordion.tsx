@@ -10,8 +10,7 @@ export function IndependentAccordion(props: IndependentAccordionPropsType) {
 
     return (
         <div>
-            <IndependentAccordionTitle text={props.title}/>
-            <button onClick={() => {setCollapsed(!collapsed)}}>set</button>
+            <IndependentAccordionTitle text={props.title} onClick={() => setCollapsed(!collapsed)}/>
             {collapsed && <IndependentAccordionBody/>}
         </div>
     )
@@ -20,12 +19,13 @@ export function IndependentAccordion(props: IndependentAccordionPropsType) {
 
 type IndependentAccordionTitlePropsType = {
     text: string
+    onClick: () => void
 }
 
 function IndependentAccordionTitle(props: IndependentAccordionTitlePropsType) {
 
     return (
-        <h3>{props.text}</h3>
+        <h3 onClick={() => props.onClick()}>{props.text}</h3>
     );
 }
 

@@ -15,6 +15,12 @@ function App() {
 
             <IndependentRating/>
 
+            <IndependentAccordion title={'hi'} />
+
+            <Rating value={3} />
+
+
+
         </div>
     );
 }
