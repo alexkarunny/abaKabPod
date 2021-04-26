@@ -11,14 +11,7 @@ export function IndependentAccordion(props: IndependentAccordionPropsType) {
     return (
         <div>
             <IndependentAccordionTitle text={props.title}/>
-            <button onClick={() => {
-                setCollapsed(true)
-            }}>set
-            </button>
-            <button onClick={() => {
-                setCollapsed(false)
-            }}>unset
-            </button>
+            <button onClick={() => {setCollapsed(!collapsed)}}>set</button>
             {collapsed && <IndependentAccordionBody/>}
         </div>
     )

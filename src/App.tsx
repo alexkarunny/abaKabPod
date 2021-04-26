@@ -9,13 +9,9 @@ import {IndependentRating} from "./components/IndependentRating/IndependentRatin
 
 function App() {
     return (
-        <div>
+        <div className={"app"}>
 
             <OnOff />
-            <OnOff />
-            <OnOff />
-
-            <IndependentAccordion title={'menu'}/>
 
             <IndependentRating/>
 
