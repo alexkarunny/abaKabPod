@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-type IndependentRatingPropsType = {
+type UncontrolledRatingPropsType = {
     //value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export function IndependentRating(props: IndependentRatingPropsType) {
+export function UncontrolledRating(props: UncontrolledRatingPropsType) {
     let [value, setValue] = useState(0)
 
     return (

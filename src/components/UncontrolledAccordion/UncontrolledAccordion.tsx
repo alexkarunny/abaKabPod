@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-type IndependentAccordionPropsType = {
+type UncontrolledAccordionPropsType = {
     title: string
 }
 
-export function IndependentAccordion(props: IndependentAccordionPropsType) {
+export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
     let [collapsed, setCollapsed] = useState(false);
 

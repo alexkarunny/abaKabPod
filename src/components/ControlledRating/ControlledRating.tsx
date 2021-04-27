@@ -2,12 +2,12 @@ import React from "react";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
-type RatingPropsType = {
+type ControlledRatingPropsType = {
     value: RatingValueType
     onClick: (value: RatingValueType) => void
 }
 
-export function Rating(props: RatingPropsType) {
+export function ControlledRating(props: ControlledRatingPropsType) {
 
         return (
             <div>

@@ -1,12 +1,12 @@
 import React from "react";
 
-type AccordionPropsType = {
+type ControlledAccordionPropsType = {
     title: string,
     collapsed: boolean
     setAccordionCollapsed: (value: boolean) => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function ControlledAccordion(props: ControlledAccordionPropsType) {
 
     return (
         <div>
@@ -55,4 +55,3 @@ function AccordionList(props: AccordionListPropsTitle) {
     )
 }
 
-export default Accordion;
