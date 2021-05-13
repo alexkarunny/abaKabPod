@@ -1,6 +1,9 @@
 import React from "react";
 
 export type ControlledAccordionPropsType = {
+    /**
+     * Title of menu
+     */
     title: string,
     collapsed: boolean
     setAccordionCollapsed: (value: boolean) => void
@@ -21,22 +24,23 @@ type AccordionTitlePropsType = {
     text: string
     setAccordionCollapsed: (value: boolean) => void
     collapsed: boolean
+    color?: string
 
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+export function AccordionTitle(props: AccordionTitlePropsType) {
 
     return (
-        <h3 onClick={() => {props.setAccordionCollapsed(!props.collapsed)}}>{props.text}</h3>
+        <h3 style={{color: props.color ? props.color : 'black'}} onClick={() => {props.setAccordionCollapsed(!props.collapsed)}}>{props.text}</h3>
     );
 }
 
-function AccordionBody() {
+export function AccordionBody() {
     debugger
     console.log('AccordionBody rendering');
     return (
         <ul>
-            <AccordionList text={'Hellp'}/>
+            <AccordionList text={'Hello'}/>
             <AccordionList text={'Salut'}/>
             <AccordionList text={'A bien to'}/>
         </ul>
