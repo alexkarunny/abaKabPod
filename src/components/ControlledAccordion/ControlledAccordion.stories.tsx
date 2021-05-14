@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Meta, Story} from '@storybook/react';
-import {AccordionBody, AccordionTitle, ControlledAccordion, ControlledAccordionPropsType} from "./ControlledAccordion";
+import {ControlledAccordion, ControlledAccordionPropsType} from "./ControlledAccordion";
 import {action} from "@storybook/addon-actions";
 
 
