@@ -35,3 +35,41 @@ export const GetValueOfUncontrolledInputByKeyPress: Story = () => {
   return <div><input ref={inputRef}/> <button onClick={save}>save</button>----value: {value}</div>
 }
 
+export const ControlledInput: Story = () => {
+  const [value, setValue] = useState('')
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.value)
+  }
+
+  return (
+      <input value={value} onChange={onChange}/>
+  )
+}
+
+export const ControlledCheckbox: Story = () => {
+  const [value, setValue] = useState<boolean>(false)
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.checked)
+  }
+
+  return (
+      <input type='checkbox' checked={value} onChange={onChange}/>
+  )
+}
+
+export const ControlledSelect: Story = () => {
+  const [value, setValue] = useState<string | undefined>(undefined)
+  const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.currentTarget.value)
+  }
+
+  return (
+      <select value={value} onChange={onChange}>
+        <option value={'1'}>None</option>
+        <option value={'2'}>Minsk</option>
+        <option value={'4'}>Lvov</option>
+      </select>
+  )
+}
