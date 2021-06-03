@@ -23,7 +23,7 @@ MenuUncollapsed.args = {
     title: 'hello',
     collapsed: false,
     setAccordionCollapsed: action('switch false to true'),
-    items: [{title: 'hello', value: 13}, {title: 'hey', value: '2'}]
+    items: [{title: 'hello', value: 13}, {title: 'hey', value: 2}]
 }
 
 export const MenuCollapsed = Template.bind({})
@@ -48,5 +48,5 @@ export const MenuMode:Story<ControlledAccordionPropsType> = (args) => {
 
 MenuMode.args = {
     title: 'counter',
-    items: [{title: 'hello', value: 13}, {title: 'hey', value: '2'}]
+    items: [{title: 'hello', value: 13}, {title: 'hey', value: 2}]
 }
