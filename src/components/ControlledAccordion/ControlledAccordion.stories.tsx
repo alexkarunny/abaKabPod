@@ -22,7 +22,8 @@ export const MenuUncollapsed = Template.bind({})
 MenuUncollapsed.args = {
     title: 'hello',
     collapsed: false,
-    setAccordionCollapsed: action('switch false to true')
+    setAccordionCollapsed: action('switch false to true'),
+    items: [{title: 'hello', value: 13}, {title: 'hey', value: '2'}]
 }
 
 export const MenuCollapsed = Template.bind({})
@@ -30,19 +31,22 @@ export const MenuCollapsed = Template.bind({})
 MenuCollapsed.args = {
     title: 'hello',
     collapsed: true,
-    setAccordionCollapsed: action('switch true to false')
+    setAccordionCollapsed: action('switch true to false'),
+    items: [],
+
 }
 
-
+const callback = action('wasclicked')
 
 export const MenuMode:Story<ControlledAccordionPropsType> = (args) => {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
 
     return (
-        <ControlledAccordion {...args} collapsed={accordionCollapsed} setAccordionCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}/>
+        <ControlledAccordion {...args} collapsed={accordionCollapsed} setAccordionCollapsed={() => setAccordionCollapsed(!accordionCollapsed)} onClick={callback}/>
     )
 }
 
 MenuMode.args = {
-    title: 'Menuffds'
+    title: 'counter',
+    items: [{title: 'hello', value: 13}, {title: 'hey', value: '2'}]
 }

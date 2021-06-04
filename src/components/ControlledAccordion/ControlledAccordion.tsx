@@ -1,5 +1,10 @@
 import React from "react";
 
+type ItemType = {
+    title: string
+    value: any
+}
+
 export type ControlledAccordionPropsType = {
     /**
      * Title of menu
@@ -7,6 +12,8 @@ export type ControlledAccordionPropsType = {
     title: string,
     collapsed: boolean
     setAccordionCollapsed: (value: boolean) => void
+    items: ItemType[]
+    onClick: (value: any) => void
 }
 
 export function ControlledAccordion(props: ControlledAccordionPropsType) {
@@ -14,7 +21,7 @@ export function ControlledAccordion(props: ControlledAccordionPropsType) {
     return (
         <div>
             <AccordionTitle text={props.title} setAccordionCollapsed={props.setAccordionCollapsed} collapsed={props.collapsed}/>
-            {props.collapsed || <AccordionBody/>}
+            {props.collapsed || <AccordionBody items={props.items} onClick={props.onClick}/>}
         </div>
     )
 }
@@ -35,27 +42,20 @@ export function AccordionTitle(props: AccordionTitlePropsType) {
     );
 }
 
-export function AccordionBody() {
+type AccordionBodyPropsType = {
+    items: ItemType[]
+    onClick: (value: any) => void
+}
+
+export function AccordionBody(props: AccordionBodyPropsType ) {
     debugger
     console.log('AccordionBody rendering');
     return (
         <ul>
-            <AccordionList text={'Hello'}/>
-            <AccordionList text={'Salut'}/>
-            <AccordionList text={'A bien to'}/>
+            {
+                props.items.map((li, index )=> <li onClick={() => { props.onClick(li.value) } } key={index}>{li.title!}</li> )
+            }
         </ul>
     );
-}
-
-type AccordionListPropsTitle = {
-    text: string
-}
-
-function AccordionList(props: AccordionListPropsTitle) {
-    return (
-        <>
-            <li>{props.text}</li>
-        </>
-    )
 }
 

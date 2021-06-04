@@ -19,7 +19,7 @@ function App() {
             <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
 
             <ControlledOnOff on={switchOn} setSwitchOn={setSwitchOn} /> {switchOn.toString()}
-            <ControlledAccordion setAccordionCollapsed={setAccordionCollapsed} collapsed={accordionCollapsed} title={"Hyi"} />
+            <ControlledAccordion setAccordionCollapsed={setAccordionCollapsed} collapsed={accordionCollapsed} title={"Hyi"} items={[{title: 'hello', value: 13}, {title: 'hey', value: '2'}]} onClick={(value) => alert(value)}/>
             <UncontrolledAccordion title={"hey"}/>
             <ControlledRating value={ratingValue} onClick={setRatingValue} />
             <UncontrolledRating />
