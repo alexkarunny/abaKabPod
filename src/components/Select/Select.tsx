@@ -1,7 +1,7 @@
 import {ItemType} from "../ControlledAccordion/ControlledAccordion";
 import React from "react";
 
-type SelectPropsType = {
+export type SelectPropsType = {
     value: number
     onChange: (value: any) => void
     items: ItemType[]
