@@ -9,7 +9,7 @@ export default {
     component: ControlledAccordion,
     argTypes: {
         color: {
-            control: 'color'
+            control: 'color',
         }
     }
 } as Meta;
@@ -23,7 +23,8 @@ MenuUncollapsed.args = {
     title: 'hello',
     collapsed: false,
     setAccordionCollapsed: action('switch false to true'),
-    items: [{title: 'hello', value: 13}, {title: 'hey', value: 2}]
+    items: [{title: 'hello', value: 13}, {title: 'hey', value: 2}],
+    color: 'green',
 }
 
 export const MenuCollapsed = Template.bind({})
