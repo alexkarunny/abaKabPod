@@ -1,0 +1,7 @@
+.item {
+    display: inline-block;
+}
+
+.active:hover{
+    background-color: #f00;
+}

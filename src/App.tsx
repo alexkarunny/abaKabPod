@@ -13,9 +13,10 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
+
     let [selectCollapsed, setSelectCollapsed] = useState<boolean>(true)
     let [selectTitle, setSelectTitle] = useState<number>(1)
-const selectNewTitle = (value: number) => {
+    const selectNewTitle = (value: number) => {
     setSelectTitle(value)
     setSelectCollapsed(true)
 }
@@ -29,7 +30,14 @@ const selectNewTitle = (value: number) => {
             <UncontrolledAccordion title={"hey"}/>
             <ControlledRating value={ratingValue} onClick={setRatingValue} />
             <UncontrolledRating />
-            <Select value={selectTitle} onChange={x => x} items={[{title: 'none', value: 1}, {title: 'Kiev', value: 2}, {title: 'Lvov', value: 3}]} isCollapsed={selectCollapsed} setSelectCollapsed={setSelectCollapsed} setSelectTitle={selectNewTitle}/>
+            <Select value={selectTitle}
+                    onChange={x => x}
+                    items={[{title: 'none', value: 1},
+                            {title: 'Kiev', value: 2},
+                            {title: 'Lvov', value: 3}]}
+                    isCollapsed={selectCollapsed}
+                    setSelectCollapsed={setSelectCollapsed}
+                    setSelectTitle={selectNewTitle}/>
         </div>
     );
 };

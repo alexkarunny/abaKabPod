@@ -22,6 +22,6 @@ export const MySelect:Story<SelectPropsType> = (args) => {
 }
 
 MySelect.args = {
-    items: [{title: 'none', value: 1}, {title: 'Lviv', value: 2}, {title: 'kiev', value: 3}]
+    items: [{title: 'none', value: 1}, {title: 'Lviv', value: 2}, {title: 'kiev', value: 3}, {title: 'grodno', value: 4}]
 
 }
