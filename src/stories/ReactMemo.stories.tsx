@@ -21,6 +21,7 @@ export const Example = () => {
     const [users, setUsers] = useState(["Dymich", "Valera", "Alex"])
     const addUser = () => {
         const newUsers = [...users, `${'sad'} new Date()`]
+        console.log('react')
         setUsers(newUsers)
     }
     return <>
