@@ -30,3 +30,24 @@ export const Example = () => {
         <div>fake: {fake}</div>
     </>
 }
+
+
+
+export const ExampleSetInterval = () => {
+    const [seconds, setSeconds] = useState(new Date().getSeconds())
+    const [minutes, setMinutes] = useState(new Date().getMinutes())
+    const [hours, setHours] = useState(new Date().getHours())
+
+    useEffect(() => {
+        setInterval(() => {
+            setSeconds(new Date().getSeconds())
+            setMinutes(new Date().getMinutes())
+            setHours(new Date().getHours())
+        }, 1000)
+    }, [seconds, minutes, hours])
+
+    return <>
+        time: {hours}:{minutes}:{seconds}
+    </>
+
+}
